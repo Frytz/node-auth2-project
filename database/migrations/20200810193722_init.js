@@ -22,7 +22,7 @@ exports.up = function(knex) {
         tbl
             .integer('role')
             .notNullable()
-            .references("departments.id")
+            .references("departments.name")
             .onDelete("RESTRICT")
             .onUpdate("CASCADE")
     });
