@@ -9,7 +9,9 @@ module.exports = role => {
         next();
       }
       else {
+        console.log({role: "role invalid"})
         res.status(403).json({you: "can't touch this"})
+
       }
     }
     

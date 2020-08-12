@@ -16,7 +16,7 @@ try {
       } else {
          
         req.decodedToken = decodedToken;
-        console.log(decodedToken.roles)
+        // console.log(decodedToken.roles)
         next();
       } 
     })

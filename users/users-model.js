@@ -5,10 +5,12 @@ module.exports = {
   find,
   findBy,
   findById,
+  findByRole
 };
 
-function find() {
-  return db("users").select("id", "username", "role").orderBy("id");
+function find(role) {
+  
+  return db("users").select("id", "username", "role").where('role', role).orderBy("id");
 }
 
 function findBy(filter) {
@@ -27,4 +29,15 @@ async function add(user) {
 
 function findById(id) {
   return db("users").where({ id }).first();
+}
+
+async function findByRole() {
+  
+  try {
+    const roles = await req.user.role
+  return db.select("*").from("users").where({id})
+}
+catch (error) {
+  throw error;
+}
 }
